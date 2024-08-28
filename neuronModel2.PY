@@ -120,22 +120,4 @@ for i in range(0, 2):
     activations_not.append(activation_not)
     print(f'Activation: {activation_not}')
 
-# Visualization of NOT function decision boundary
-plt.figure(figsize=(8, 6))
-for i in range(len(input_table_not)):
-    if dot_products_not[i] >= T_not:
-        plt.scatter(input_table_not[i][0], 0, color='blue', label='NOT=1' if i == 0 else "")
-    else:
-        plt.scatter(input_table_not[i][0], 0, color='red', label='NOT=0' if i == 0 else "")
 
-# Plotting the decision boundary for NOT function
-x_vals_not = np.array([0, 1])
-y_vals_not = (T_not - weights_not[0] * x_vals_not) / 1  # This is essentially just a line parallel to x-axis
-plt.plot(x_vals_not, y_vals_not, '--', color='green', label='Decision Boundary (NOT)')
-
-plt.title("NOT Function - Decision Boundary")
-plt.xlabel('Input')
-plt.ylabel('Output')
-plt.legend()
-plt.grid(True)
-plt.show()
