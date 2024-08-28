@@ -41,11 +41,12 @@ for i in range(0, 4):
 plt.figure(figsize=(8, 6))
 for i in range(len(input_table)):
     if dot_products[i] >= T:
-        plt.scatter(input_table[i][0], input_table[i][1], color='blue', label='OR=1' if i == 0 else "")
+        plt.scatter(input_table[i][0], input_table[i][1], color='blue', s=150, label='OR=1' if i == 0 else "")
     else:
-        plt.scatter(input_table[i][0], input_table[i][1], color='red', label='OR=0' if i == 0 else "")
+        plt.scatter(input_table[i][0], input_table[i][1], color='red', s=150, label='OR=0' if i == 0 else "")
 
 # Plotting the decision boundary for OR function
+
 x_vals = np.array([0, 1])
 y_vals = (T - weights[0] * x_vals) / weights[1]
 plt.plot(x_vals, y_vals, '--', color='green', label='Decision Boundary (OR)')
@@ -79,12 +80,12 @@ for i in range(0, 4):
 plt.figure(figsize=(8, 6))
 for i in range(len(input_table)):
     if dot_products[i] >= T:
-        plt.scatter(input_table[i][0], input_table[i][1], color='blue', label='NOR=1' if i == 0 else "")
+        plt.scatter(input_table[i][0], input_table[i][1], color='blue', s=150, label='NOR=1' if i == 0 else "")
     else:
-        plt.scatter(input_table[i][0], input_table[i][1], color='red', label='NOR=0' if i == 0 else "")
+        plt.scatter(input_table[i][0], input_table[i][1], color='red', s= 150, label='NOR=0' if i == 0 else "")
 
 # Plotting the decision boundary for NOR function
-x_vals = np.array([0, 1])
+x_vals = np.array([-1, 1])
 y_vals = (T - weights[0] * x_vals) / weights[1]
 plt.plot(x_vals, y_vals, '--', color='green', label='Decision Boundary (NOR)')
 
